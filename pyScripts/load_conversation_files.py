@@ -26,18 +26,19 @@ def organize_data(sheet):
 # Writes a given attribute to a given file and adds delimeters to ensure clean reading by other tools.
 def write_fields(data, index, file):
 	for i in range(len(cleanData)):
-		file.write(data[index][cleanData[i]])
-		file.write('. ')
+		if data[index]['status'] == 'publish':
+			file.write(data[index][cleanData[i]])
+			file.write('. ')
 
 # Writes relevant data from the xmlData we extracted such that each conversation contains its own file in the folder 'conversationResults'.
-def write_conversation_files(xmlData):
+def write_conversation_files(conversations):
 	print('Writing conversation files...')
-	for i in range(len(xmlData)):
+	for i in range(len(conversations)):
 		resultFile = open(conversationResultPath + str(i), 'w')
-		write_fields(xmlData, i, resultFile)
+		write_fields(conversations, i, resultFile)
 		resultFile.close()
 	print('Done.')
 
 landTalkWorkBook = openpyxl.load_workbook(scrapedDataPath)
-data = organize_data(landTalkWorkBook[collectionSheet])
-write_conversation_files(data)
+conversationData = organize_data(landTalkWorkBook[collectionSheet])
+write_conversation_files(conversationData)
