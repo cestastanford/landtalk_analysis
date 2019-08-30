@@ -18,7 +18,7 @@ def pull_conversation_data(currRow, fields):
 # and uses that data to create a list of conversation data.
 def organize_data(sheet):
     sheetData = []
-    for i in range(sheet.max_row):
+    for i in range(numConversations): # This value should be modified in 'dataFields.py' when conversations are added.
         currFile = pull_conversation_data(list(sheet.rows)[i], convDataFields)
         sheetData.append(currFile)
     return sheetData
