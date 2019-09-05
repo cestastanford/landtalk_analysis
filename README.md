@@ -15,7 +15,7 @@
 
 <h2>Producing a Topic Model</h2>
 <ul>
-<li> From the terminal, go to a directory you're comfortable working from (again, I suggest your desktop) and clone into <a href="https://github.com/cestasteanford/landtalk_analysis.git">this repo</a> which contains all the necessary scripts and data needed to produce a helpful topic model.
+<li> From the terminal, go to a directory you're comfortable working from (again, I suggest your desktop) and clone into <a href="https://github.com/cestastanford/landtalk_analysis.git">this repo</a> which contains all the necessary scripts and data needed to produce a helpful topic model.
 </li><br>
 <li> Once cloned in, move both the <kbd>pyScripts</kbd> folder and the <kbd>stoplists</kbd> folder into your <kbd>mallet-files</kbd> folder either through the command line or the GUI. </li><br>
 <li> Again, either from the command line or the GUI, go into <kbd>pyScripts</kbd> and move <kbd>mallet-script.sh</kbd> up one level into the main <kbd>mallet-files</kbd> directory. </li> <br>
